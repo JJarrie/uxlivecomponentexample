@@ -1,0 +1,21 @@
+{# templates/components/edit_post.html.twig #}
+<div {{ attributes }}>
+    <form data-model="on(change)|*">
+        <input
+                type="text"
+                name="post[title]"
+                value="{{ post.title }}"
+        >
+
+        {{ component('markdown_textarea', {
+            name: 'toto',
+            dataModel: 'value:post.content',
+            label: 'Content toto'
+        }) }}
+
+        <a href="#"
+                data-action="live#action"
+                data-action-name="save"
+        >Save</a>
+    </form>
+</div>
